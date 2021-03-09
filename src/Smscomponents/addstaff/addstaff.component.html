@@ -1,0 +1,43 @@
+<div style="margin-left: 235px;margin-top: -467px;margin-right: 20px;">
+    <form [formGroup]="addstaffForm" (ngSubmit)="savestaff()">
+        <div style=" margin-left: 80px;margin-top: 70px;">
+            <div>
+                Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp; <input type="text" name="" id="staffName" formControlName="staffName">
+            </div>&nbsp;
+            <div>
+                DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; <input type="date" name="" id="dob" formControlName="dob">
+            </div>&nbsp;
+            <div>
+                Subjetcs &nbsp; :&nbsp;&nbsp; <input type="text" name="" id="subjects" formControlName="subjects">
+            </div>&nbsp;
+            <div>
+                PhoneNo &nbsp;:&nbsp;&nbsp; <input type="text" name="" id="phoneNo" formControlName="phoneNo">
+            </div>&nbsp;
+            <div>
+                Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                : &nbsp;&nbsp;<input type="text" name="" id="email" formControlName="email">
+            </div>&nbsp;
+            <div>
+                Gender &nbsp;&nbsp;&nbsp;&nbsp;
+                : &nbsp;&nbsp;<select>
+                    <option value="male" id = "male" formControlName="gender">Male</option>
+                    <option value="female" id = "female" formControlName="gender">FeMale</option>
+                </select>
+            </div>
+            <div style="margin-top: 20px;text-align: center;">
+                <button type="submit">Save</button>
+            </div>
+
+        </div>
+        <div style="margin-left: 690px;margin-top: -392px;">
+            <div style="margin-top: 35px;">
+                Address
+            </div>
+            <textarea name="" id="" cols="20" rows="0"  formControlName="address"></textarea>
+        
+        </div>
+    </form>
+</div>
+
+
+<router-outlet></router-outlet>

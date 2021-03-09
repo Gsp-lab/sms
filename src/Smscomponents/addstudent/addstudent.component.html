@@ -1,0 +1,63 @@
+<div style="margin-left: 235px;margin-top: -540px;margin-right: 20px;">
+    <form [formGroup]="addstudentForm" (ngSubmit)="savestudent()">
+        <div style=" margin-left: 80px;margin-top: 70px;">
+            <div>
+                Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp; <input type="text" style="margin-left: 22px;" id="staffName"
+                    formControlName="studentName">
+            </div>&nbsp;
+            <div>
+                DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; &nbsp;&nbsp;<input type="date" style="margin-left: 22px;" id="dob"
+                    formControlName="dob">
+            </div>&nbsp;
+            <div>
+                FatherName &nbsp; :&nbsp;&nbsp; <input type="text" name="" id="subjects" formControlName="fatherName">
+            </div>&nbsp;
+            <div>
+                Class &nbsp;:&nbsp;&nbsp;&nbsp; 
+                 <input type="text" style="margin-left: 45px;" id="phoneNo" formControlName="phoneNo">
+            </div>&nbsp;
+            <div>
+                PhoneNo &nbsp;:&nbsp;&nbsp; <input type="text" style="margin-left: 22px;" id="phoneNo" formControlName="phoneNo">
+            </div>&nbsp;
+            <div>
+                Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                : &nbsp;&nbsp;<input type="text" style="margin-left: 22px;" id="email" formControlName="email">
+            </div>&nbsp;
+            <div >
+                Gender &nbsp;&nbsp;&nbsp;&nbsp;
+                : &nbsp;&nbsp;<select style="margin-left: 22px;">
+                    <option value="male" id="male" formControlName="gender" style="margin-left: 22px;">Male</option>
+                    <option value="female" id="female" formControlName="gender" style="margin-left: 22px;">FeMale</option>
+                </select>
+            </div>&nbsp;    
+            <div>
+                <div>
+                    Address &nbsp;&nbsp;:
+                </div>
+                <textarea name="" id="" cols="20" rows="0" style="margin-left: 107px;margin-top: -21px;" formControlName="address"></textarea>
+
+            </div>
+            <div>
+                ClassTeacher :   <input type="text" style="margin-left: 1px;" id="phoneNo" formControlName="phoneNo">
+            </div>&nbsp;
+            <div style="margin-top: 0px;" >
+                <button type="submit">Save</button>
+            </div>
+
+        </div>
+         <mat-card style="margin-left: 530px;margin-top: -510px;margin-right: 152px;text-align: center;">
+            Marks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button (click) = "addMarks()">SaveMarks</button> <br><br>
+         <div> Telugu : <input type="text" name="" id="" formControlName="telugu" style="margin-left: 92px;"></div>&nbsp;
+          <div> English : <input type="text" name="" id="" formControlName="english" style="margin-left: 92px;"></div>&nbsp;
+          <div> Hindi : <input type="text" name="" id="" formControlName="hindi" style="margin-left: 100px;"> </div>&nbsp;
+         <div> Maths : <input type="text" name="" id="" formControlName="maths" style="margin-left: 92px;"> </div>&nbsp;
+         <div> Physcial Science  : <input type="text" name="" id="" formControlName="physcialSciense" style="margin-left: 22px;"> </div>&nbsp;
+          <div> Natural Science : <input type="text" name="" id="" formControlName="naturalSciense" style="margin-left: 32px;"> </div>&nbsp;
+         <div> Social : <input type="text" name="" id="" formControlName="social" style="margin-left: 92px;"></div>&nbsp;
+        </mat-card>
+    </form>
+</div>
+
+
+<router-outlet></router-outlet>

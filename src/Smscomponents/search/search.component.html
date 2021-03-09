@@ -1,0 +1,50 @@
+<mat-card style="margin-left: 235px;margin-top: -467px;margin-right: 20px;">
+    <label for="cars">Choose a Options:</label>&nbsp;&nbsp;&nbsp;
+    <select (change) = "searchEvent($event)" style="height: 28px;width: 105px;">
+      <option value="" selected></option>
+      <option value="student">Student</option>
+      <option value="staff">Satff</option>
+    </select> &nbsp;&nbsp;&nbsp;
+     <input type="text" name="" id=""> &nbsp;&nbsp;&nbsp;
+    <input type="submit" value="Submit">
+  
+</mat-card>
+
+<mat-card   *ngIf ="staffFlag "     style="margin-left: 235px;margin-right: 611px; margin-top: 5px;">
+ <h5 style="text-align: center; background-color: aqua;"> Statff Deatils</h5>
+  <div>
+     &nbsp;
+    <div>StaffName &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;Gopal </div>&nbsp;
+    <div>DOB     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        : &nbsp;&nbsp;&nbsp;20021 </div> &nbsp;
+    <div>Subjects  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; Telugu </div>&nbsp;
+    <div> PhoneNo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : &nbsp;&nbsp;&nbsp;888988 </div>&nbsp;
+   <div> Email   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     : &nbsp;&nbsp;&nbsp; hhh@gamil.com </div>&nbsp;
+    <div>Gender  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  :
+      &nbsp;&nbsp;&nbsp;Male </div>&nbsp;
+    <div>Address  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp; Kavali  </div>
+  </div>
+</mat-card>
+<mat-card   *ngIf ="studentFlag " style="margin-left: 300px;margin-right: 225px; margin-top: 25px;">
+  <h5 style="text-align: center; background-color: aqua;"> Student Deatils</h5>
+  <div>
+     &nbsp;
+    <div>StaffName &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;Gopal </div>&nbsp;
+    <div>DOB     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        : &nbsp;&nbsp;&nbsp;20021 </div> &nbsp;
+    <div>Subjects  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; Telugu </div>&nbsp;
+    <div> PhoneNo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : &nbsp;&nbsp;&nbsp;888988 </div>&nbsp;
+   <div> Email   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     : &nbsp;&nbsp;&nbsp; hhh@gamil.com </div>&nbsp;
+    <div style="margin-left: 470px;margin-top: -236px;">Gender  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  :
+      &nbsp;&nbsp;&nbsp;Male </div>&nbsp;
+    <div style="margin-left: 470px;margin-top: -6px;">Address  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp; Kavali  </div>
+    <div>Class  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      9  </div>
+    <div style="margin-left: 470px;margin-top: -6px;">ClassTeacher :&nbsp;&nbsp;&nbsp; Raju  </div>&nbsp;
+    <div style="margin-left: 470px;margin-top: -6px;">Marks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
+       500  </div>&nbsp;
+    <div style="margin-left: 470px;margin-top: -6px;">FatherName &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; Raju  </div>&nbsp;
+  </div>
+</mat-card>
