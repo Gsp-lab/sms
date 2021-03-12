@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/sms-guards/auth.guard';
 import { AddstaffComponent } from 'src/Smscomponents/addstaff/addstaff.component';
 import { AddstudentComponent } from 'src/Smscomponents/addstudent/addstudent.component';
 import { DashboardComponent } from 'src/Smscomponents/dashboard/dashboard.component';
@@ -15,15 +16,15 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'',component:LoginComponent,pathMatch:'full'},
   
-  {path:'sms',component:NavbarComponent},
+  {path:'sms',component:NavbarComponent,canActivate:[AuthGuard]},
   {path:'',component:NavbarComponent,
   children:[
-    {path:'dashboard',component:DashboardComponent},
-    {path:'search',component:SearchComponent},
-    {path:'staff',component:StaffComponent},
-    {path:'student',component:StudentComponent},
-    {path:'addstudent',component:AddstudentComponent},
-    {path:'addstaff',component:AddstaffComponent}
+    {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
+    {path:'search',component:SearchComponent,canActivate:[AuthGuard]},
+    {path:'staff',component:StaffComponent,canActivate:[AuthGuard]},
+    {path:'student',component:StudentComponent,canActivate:[AuthGuard]},
+    {path:'addstudent',component:AddstudentComponent,canActivate:[AuthGuard]},
+    {path:'addstaff',component:AddstaffComponent,canActivate:[AuthGuard]}
   ]}
 
 ];

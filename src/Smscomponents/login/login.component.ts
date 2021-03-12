@@ -1,7 +1,10 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
+import { UserService } from 'src/SmsServices/user.service';
+import { UserToken } from './UserToken';
 
 @Component({
   selector: 'app-login',
@@ -9,32 +12,50 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   loginForm!: FormGroup;
   submitted = false;
+
+  userToken!: UserToken;
+
   constructor(private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
-    private router:Router) { }
+    private router: Router,
+    private userService: UserService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:['',[Validators.required,Validators.email]],
-      password:['',Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
     })
   }
   get f() { return this.loginForm.controls; }
-  onSubmit(){
+  errormsg :any;
+  onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
-        return;
+      return;
     }
     this.spinner.show();
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
-    this.spinner.hide();
-    this.router.navigateByUrl('/SmsDashboard')
+    this.userService.login(this.loginForm.value).subscribe(
+
+      (data: any) => {
+        this.userToken = data;
+        localStorage.setItem("userName", this.userToken.userName);
+        localStorage.setItem("token", this.userToken.token);
+        localStorage.setItem("roles", this.userToken.roles);
+        this.spinner.hide();
+        this.router.navigateByUrl('/dashboard')
+      }
+     
+    ),(_error: any)=>{
+       this.errormsg  = _error;
+       alert(_error);
+    };
+
+
   }
-  
+
 }

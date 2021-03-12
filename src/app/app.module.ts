@@ -19,6 +19,10 @@ import { AddstudentComponent } from 'src/Smscomponents/addstudent/addstudent.com
 import { AddstaffComponent } from 'src/Smscomponents/addstaff/addstaff.component';
 import { UsersComponent } from 'src/Smscomponents/users/users.component';
 import { AddusersComponent } from 'src/Smscomponents/addusers/addusers.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SmsInterceptor } from 'src/sms-interceptors/sms.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +46,10 @@ import { AddusersComponent } from 'src/Smscomponents/addusers/addusers.component
     ReactiveFormsModule,
     NgxSpinnerModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:SmsInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

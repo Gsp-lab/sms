@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { StaffService } from 'src/SmsServices/staff.service';
 
 @Component({
   selector: 'app-addstaff',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AddstaffComponent implements OnInit {
 
-  constructor(private formBulider:FormBuilder) { }
+  constructor(private formBulider:FormBuilder,
+    private staffSerivce:StaffService) { }
   addstaffForm!: FormGroup;
 
   ngOnInit(): void {
@@ -23,7 +25,11 @@ export class AddstaffComponent implements OnInit {
     })
   }
   savestaff(){
-   console.log(this.addstaffForm.value);
+   this.staffSerivce.createTeacher(this.addstaffForm.value).subscribe(
+     (data:any) => {
+       console.log(data);
+     }
+   )
   }
 
 }
